@@ -1,6 +1,7 @@
 ```mermaid
 classDiagram
-    Car
+    Car ..> Engine
+    Car ..> Battery
     class Car{
         +Engine engine
         +Battery battery
@@ -8,7 +9,7 @@ classDiagram
     class Engine{
         +int mileage
         +bool is_warning_on
-        +should_service()
+        +should_service() bool
     }
     class Battery{
         +datetime installed_date
