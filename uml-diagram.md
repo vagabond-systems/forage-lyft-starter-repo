@@ -5,6 +5,7 @@ classDiagram
     class Car{
         +Engine engine
         +Battery battery
+        +should_service() bool
     }
     class Engine{
         +int mileage
@@ -13,7 +14,7 @@ classDiagram
     }
     class Battery{
         +datetime installed_date
-        +should_service()
+        +should_service() bool
     }
 ```
 
