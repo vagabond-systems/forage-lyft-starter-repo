@@ -1,15 +1,14 @@
-from abc import ABC, abstractmethod
 from engine.engine import Engine
 from battery.battery import Battery
+from Serviceable import Serviceable
 
 
-class Car():
+class Car(Serviceable):
 
-    def __init__(self, last_service_date, Engine, Battery):
+    def __init__(self, last_service_date, engine, battery):
         self.last_service_date = last_service_date
-        self.engine = Engine()
-        self.battery = Battery()
+        self.engine = engine
+        self.battery = battery
 
-    @abstractmethod
     def needs_service(self):
-        pass
+        return self.engine.needs_service() or self.battery.needs_service()
