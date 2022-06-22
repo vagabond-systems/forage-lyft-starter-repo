@@ -7,7 +7,4 @@ class Car(ABC):
         self.battery = battery
 
     def needs_service(self):
-        return (
-            self.engine.engine_should_be_serviced()
-            and self.battery.battery_should_be_serviced()
-        )
+        return self.engine.needs_service() and self.battery.needs_service()
