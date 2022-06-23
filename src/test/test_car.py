@@ -6,6 +6,8 @@ from engine.sternman_engine import SternmanEngine
 from engine.willoughby_engine import WilloughbyEngine
 from battery.nubbin_battery import NubbinBattery
 from battery.splindler_battery import SplindlerBattery
+from tire.carrigan_tire import CarriganTire
+from tire.octoprime_tire import OctoprimeTire
 
 
 class TestCapuletEngine(unittest.TestCase):
@@ -95,6 +97,34 @@ class TestSplindlerBattery(unittest.TestCase):
 
         battery = SplindlerBattery(last_service_date)
         self.assertFalse(battery.needs_service())
+
+
+class TestCarriganTire(unittest.TestCase):
+    def test_tire_should_be_serviced(self):
+        sensors = [0.1, 0.2, 0.4, 0.9]
+
+        tire = CarriganTire(sensors)
+        self.assertTrue(tire.needs_service())
+
+    def test_tire_should_not_be_serviced(self):
+        sensors = [0.1, 0.2, 0.4, 0.5]
+
+        tire = CarriganTire(sensors)
+        self.assertFalse(tire.needs_service())
+
+
+class TestOctoprimeTire(unittest.TestCase):
+    def test_tire_should_be_serviced(self):
+        sensors = [1, 1, 1, 1]
+
+        tire = OctoprimeTire(sensors)
+        self.assertTrue(tire.needs_service())
+
+    def test_tire_should_not_be_serviced(self):
+        sensors = [0.8, 0.6, 0.7, 0.8]
+
+        tire = OctoprimeTire(sensors)
+        self.assertFalse(tire.needs_service())
 
 
 if __name__ == "__main__":
