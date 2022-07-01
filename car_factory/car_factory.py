@@ -1,11 +1,9 @@
 from car.car import Car
 from engine.capulet_engine import CapuletEngine
-from engine.engine import Engine
 from engine.willoughby_engine import WilloughbyEngine
 from engine.sternman_engine import SternmanEngine
 from battery.spindler_battery import SpindlerBattery
 from battery.nubbin_battery import NubbinBattery
-from _datetime import datetime
 
 
 class CarFactory:
@@ -34,11 +32,3 @@ class CarFactory:
         battery = NubbinBattery(last_service_date)
         return Car(engine, battery)
 
-# today = datetime.today()
-# last_service_date = today.replace(year=today.year - 3)
-# current_mileage = 0
-# last_service_mileage = 0
-# facroty = CarFactory()
-# car = facroty.create_thovex(today, current_mileage=current_mileage, last_service_mileage=last_service_mileage,
-#              last_service_date=last_service_date)
-# print(car.needs_service())
