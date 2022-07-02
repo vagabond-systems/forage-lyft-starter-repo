@@ -4,7 +4,7 @@ from datetime import datetime
 
 # serviced every 4 years
 class NubbinBattery(Battery):
-    def __init__(self, last_service_date: datetime) -> None:
+    def __init__(self, last_service_date) -> None:
         self._last_service_date = last_service_date
 
     # return true if it has been at least 4 years since last service date
