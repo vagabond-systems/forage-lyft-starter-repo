@@ -9,5 +9,5 @@ class CapuletEngine(Engine):
         self.__last_service_mileage = last_service_mileage
 
     # serviced every 30k miles
-    def engine_should_be_serviced(self) -> bool:
+    def needs_service(self) -> bool:
         return (self.__current_mileage - self.__last_service_mileage) > 30000
