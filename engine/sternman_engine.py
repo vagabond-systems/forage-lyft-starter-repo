@@ -2,11 +2,11 @@
 from engine.engine import Engine
 
 
-# private variables for class
+# serviced only if the warning light is on
 class SternmanEngine(Engine):
     def __init__(self, warning_light_on: bool) -> None:
         self.__warning_light_on = warning_light_on
 
-    # returns True if warning light is on. Serviced only if warning light is on
+    # returns true if the warning light is on
     def needs_service(self) -> bool:
         return self.__warning_light_on

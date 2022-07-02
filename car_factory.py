@@ -6,6 +6,7 @@ from battery.spindler_battery import SpindlerBattery
 from battery.nubbin_battery import NubbinBattery
 
 
+# factory to create cars
 class CarFactory:
     def create_calliope(self, last_service_date, current_mileage: int, last_service_mileage: int) -> Car:
         engine = CapuletEngine(current_mileage, last_service_mileage)
