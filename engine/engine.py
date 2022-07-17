@@ -1,11 +1,5 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 
-from Serviceable import Serviceable
-
-class Engine(Serviceable, ABC):
-    def __init__(self):
-        pass
-    
-    @abstractmethod
+class Engine(ABC):
     def need_service(self):
         pass
