@@ -1,23 +1,28 @@
 from car import Car
-from capulete_engine import CapuletEngine
-from sternman_engine import SternmanEngine
-from willoughby_engine import WilloughbyEngine
-from nubbin import Nubbin
-from spindler import Spindler
+from engine.capulete_engine import CapuletEngine
+from engine.sternman_engine import SternmanEngine
+from engine.willoughby_engine import WilloughbyEngine
+from battery.nubbin import Nubbin
+from battery.spindler import Spindler
 
 
 class Factory(Car):
+    @staticmethod
     def create_calliope(self, current_date, last_service_date, current_mileage, last_service_mileage):
-        return Car(self, CapuletEngine, Spindler)
+        return Car(self, CapuletEngine(current_mileage, last_service_mileage)), Spindler(last_service_date, current_date))
     
+    @staticmethod
     def create_glissade(self, current_date, last_service_date, current_mileage, last_service_mileage):
-        return Car(self, WilloughbyEngine, Spindler)
+        return Car(self, WilloughbyEngine(current_mileage, last_service_mileage), Spindler(last_service_date, current_date))
 
+    @staticmethod
     def create_palindrome(self, current_date, last_service_date, warning_indicator):
-        return Car(self, SternmanEngine, Spindler)
+        return Car(self, SternmanEngine(warning_indicator), Spindler(last_service_date, current_date))
 
+    @staticmethod
     def create_rorschach(self, current_date, last_service_date, current_mileage, last_service_mileage):
-        return Car(self, WilloughbyEngine, Nubbin)
+        return Car(self, WilloughbyEngine(current_mileage, last_service_mileage), Nubbin(last_service_date, current_date))
 
+    @staticmethod
     def create_thovex(self, current_date, last_service_date, current_mileage, last_service_mileage):
-        return Car(self, CapuletEngine, Nubbin)
+        return Car(self, CapuletEngine(current_mileage, last_service_mileage), Nubbin(last_service_date, current_date))
