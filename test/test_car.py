@@ -1,13 +1,13 @@
 import unittest
 from datetime import datetime
 
-from engine.model.calliope import Calliope
-from engine.model.glissade import Glissade
-from engine.model.palindrome import Palindrome
-from engine.model.rorschach import Rorschach
-from engine.model.thovex import Thovex
+from model.calliope import Calliope
+from model.glissade import Glissade
+from model.palindrome import Palindrome
+from model import Rorschach
+from model.thovex import Thovex
 
-
+# inherenting from unittest.Testcase allows for testing capabilities
 class TestCalliope(unittest.TestCase):
     def test_battery_should_be_serviced(self):
         today = datetime.today().date()
