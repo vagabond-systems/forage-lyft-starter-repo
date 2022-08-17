@@ -1,13 +1,6 @@
+from abc import ABC
 
 
-from car import Car
-
-
-
-class Battery(Car):
-    def __init__(self, last_service_date, current_date):
-        self.last_service_date = last_service_date
-        self.current_date = current_date
-
+class Battery(ABC):
     def needs_service(self):
         pass

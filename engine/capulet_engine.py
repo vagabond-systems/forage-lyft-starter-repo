@@ -1,4 +1,3 @@
-
 from engine.engine import Engine
 
 
@@ -7,5 +6,5 @@ class CapuletEngine(Engine):
         self.current_mileage = current_mileage
         self.last_service_mileage = last_service_mileage
 
-    def needs_service(self):
+    def engine_should_be_serviced(self):
         return self.current_mileage - self.last_service_mileage > 30000
