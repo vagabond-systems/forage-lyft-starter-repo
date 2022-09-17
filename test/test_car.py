@@ -1,5 +1,5 @@
 import unittest
-from datetime import date
+import datetime
 
 from engine.capulet_engine import CapuletEngine
 from engine.willoughby_engine import WilloughbyEngine
@@ -145,8 +145,8 @@ class TestThovex(unittest.TestCase):
         self.assertFalse(capulet.needs_service())
 
     def test_battery_should_be_serviced(self):
-        current_date = date.isoformat("2020-05-15")
-        last_service_date = date.fromisoformat("2018-01-25")
+        current_date = datetime.today().date()
+        last_service_date = current_date.replace(year = current_date.year - 5)
         
         nubbin = NubbinBattery(last_service_date, current_date)
         self.assertTrue(nubbin.needs_service())
