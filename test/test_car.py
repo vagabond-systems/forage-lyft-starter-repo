@@ -146,7 +146,7 @@ class TestThovex(unittest.TestCase):
 
     def test_battery_should_be_serviced(self):
         current_date = date(2022, 12, 4).isoformat()
-        last_service_date = date(2019, 12, 4).isoformat()
+        last_service_date = date(2021, 12, 4).isoformat()
         
         battery = NubbinBattery(last_service_date, current_date)
         self.assertTrue(battery.needs_service())
