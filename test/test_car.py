@@ -1,5 +1,5 @@
 import unittest
-import datetime
+from datetime import date
 
 from engine.capulet_engine import CapuletEngine
 from engine.willoughby_engine import WilloughbyEngine
@@ -26,8 +26,8 @@ class TestCalliope(unittest.TestCase):
         self.assertFalse(capulet.needs_service())
 
     def test_battery_should_be_serviced(self):
-        current_date = datetime.today().date()
-        last_service_date = current_date.replace(year = current_date.year - 3)
+        current_date = date(2022, 12, 4).isoformat()
+        last_service_date = date(2019, 12, 4).isoformat()
 
         spindler = SpindlerBattery(last_service_date, current_date)
         self.assertTrue(spindler.needs_service())
@@ -57,8 +57,8 @@ class TestGlissade(unittest.TestCase):
         self.assertFalse(willoughby.needs_service())
 
     def test_battery_should_be_serviced(self):
-        current_date = datetime.today().date()
-        last_service_date = current_date.replace(year = current_date.year - 3)
+        current_date = date(2022, 12, 4).isoformat()
+        last_service_date = date(2019, 12, 4).isoformat()
 
         spindler = SpindlerBattery(last_service_date, current_date)
         self.assertTrue(spindler.needs_service())
@@ -85,8 +85,8 @@ class TestPalindrome(unittest.TestCase):
         self.assertFalse(sternman.needs_service())
 
     def test_battery_should_be_serviced(self):
-        current_date = datetime.today().date()
-        last_service_date = current_date.replace(year = current_date.year - 3)
+        current_date = date(2022, 12, 4).isoformat()
+        last_service_date = date(2019, 12, 4).isoformat()
 
         spindler = SpindlerBattery(last_service_date, current_date)
         self.assertTrue(spindler.needs_service())
@@ -115,8 +115,8 @@ class TestRorschach(unittest.TestCase):
         self.assertFalse(willoughby.needs_service())
 
     def test_battery_should_be_serviced(self):
-        current_date = datetime.today().date()
-        last_service_date = current_date.replace(year = current_date - 5)
+        current_date = date(2022, 12, 4).isoformat()
+        last_service_date = date(2019, 12, 4).isoformat()
 
         spindler = SpindlerBattery(last_service_date, current_date)
         self.assertTrue(spindler.needs_service())
@@ -145,11 +145,11 @@ class TestThovex(unittest.TestCase):
         self.assertFalse(capulet.needs_service())
 
     def test_battery_should_be_serviced(self):
-        current_date = datetime.today().date()
-        last_service_date = current_date.replace(year = current_date.year - 5)
+        current_date = date(2022, 12, 4).isoformat()
+        last_service_date = date(2019, 12, 4).isoformat()
         
-        nubbin = NubbinBattery(last_service_date, current_date)
-        self.assertTrue(nubbin.needs_service())
+        battery = NubbinBattery(last_service_date, current_date)
+        self.assertTrue(battery.needs_service())
 
     def test_battery_should_not_be_serviced(self):
       
