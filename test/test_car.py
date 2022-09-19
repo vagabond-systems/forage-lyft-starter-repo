@@ -9,6 +9,8 @@ from engine.sternman_engine import SternmanEngine
 from battery.spindler import SpindlerBattery
 from battery.nubbin import NubbinBattery
 
+from tires.carrigan import Carrigan
+from tires.octoprime import Octoprime
 
 class TestCalliope(unittest.TestCase):
     def test_engine_should_be_serviced(self):
@@ -39,6 +41,20 @@ class TestCalliope(unittest.TestCase):
 
         spindler = SpindlerBattery(last_service_date, current_date)
         self.assertFalse(spindler.needs_service())
+
+    def test_tire_should_be_serviced(self):
+        tire_wear = 0.9
+
+        carrigan = Carrigan(tire_wear)
+        self.assertTrue(carrigan.needs_service())
+        
+        
+
+    def test_tire_should_not_be_serviced(self):
+        tire_wear = 0.8
+
+        carrigan = Carrigan(tire_wear)
+        self.assertFalse(carrigan.needs_service())
 
 
 class TestGlissade(unittest.TestCase):
@@ -71,6 +87,20 @@ class TestGlissade(unittest.TestCase):
         spindler = SpindlerBattery(last_service_date, current_date)
         self.assertFalse(spindler.needs_service())
 
+    def test_tire_should_be_serviced(self):
+        tire_wear = 3.0
+
+        octoprime = Octoprime(tire_wear)
+        self.assertTrue(octoprime.needs_service())
+        
+        
+
+    def test_tire_should_not_be_serviced(self):
+        tire_wear = 2.9
+
+        octoprime = Octoprime(tire_wear)
+        self.assertFalse(octoprime.needs_service())
+
 class TestPalindrome(unittest.TestCase):
     def test_engine_should_be_serviced(self):
         warning_light_is_on = True
@@ -98,6 +128,20 @@ class TestPalindrome(unittest.TestCase):
 
         spindler = SpindlerBattery(last_service_date, current_date)
         self.assertFalse(spindler.needs_service())
+
+    def test_tire_should_be_serviced(self):
+        tire_wear = 0.9
+
+        carrigan = Carrigan(tire_wear)
+        self.assertTrue(carrigan.needs_service())
+        
+        
+
+    def test_tire_should_not_be_serviced(self):
+        tire_wear = 0.8
+
+        carrigan = Carrigan(tire_wear)
+        self.assertFalse(carrigan.needs_service())
 
 class TestRorschach(unittest.TestCase):
     def test_engine_should_be_serviced(self):
@@ -129,6 +173,20 @@ class TestRorschach(unittest.TestCase):
         nubbin = NubbinBattery(last_service_date, current_date)
         self.assertFalse(nubbin.needs_service())
 
+    def test_tire_should_be_serviced(self):
+        tire_wear = 3.0
+
+        octoprime = Octoprime(tire_wear)
+        self.assertTrue(octoprime.needs_service())
+        
+        
+
+    def test_tire_should_not_be_serviced(self):
+        tire_wear = 2.9
+
+        octoprime = Octoprime(tire_wear)
+        self.assertFalse(octoprime.needs_service())
+
 class TestThovex(unittest.TestCase):
     def test_engine_should_be_serviced(self):
         current_mileage = 30002
@@ -158,3 +216,18 @@ class TestThovex(unittest.TestCase):
 
         nubbin = NubbinBattery(last_service_date, current_date)
         self.assertFalse(nubbin.needs_service())
+
+    def test_tire_should_be_serviced(self):
+        tire_wear = 0.9
+
+        carrigan = Carrigan(tire_wear)
+        self.assertTrue(carrigan.needs_service())
+        
+        
+
+    def test_tire_should_not_be_serviced(self):
+        tire_wear = 0.8
+
+        carrigan = Carrigan(tire_wear)
+        self.assertFalse(carrigan.needs_service())
+        
