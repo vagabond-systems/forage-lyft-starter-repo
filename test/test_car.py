@@ -118,8 +118,8 @@ class TestRorschach(unittest.TestCase):
         current_date = date(2022, 12, 4).isoformat()
         last_service_date = date(2019, 12, 4).isoformat()
 
-        spindler = SpindlerBattery(last_service_date, current_date)
-        self.assertTrue(spindler.needs_service())
+        nubbin = NubbinBattery(last_service_date, current_date)
+        self.assertTrue(nubbin.needs_service())
 
     def test_battery_should_not_be_serviced(self):
       
