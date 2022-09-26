@@ -11,8 +11,8 @@ class Battery(ABC):
 
 class NubinBattery(Battery):
     def __init__(self, current_date, last_service_date):
-        self.current_date = datetime.strptime(current_date, '%Y-%m-%d').date()
-        self.last_service_date = datetime.strptime(last_service_date, '%Y-%m-%d').date()
+        self.current_date = current_date
+        self.last_service_date = last_service_date
 
     ## Should be serviced once every 4 years
     def needs_service(self) -> bool:
@@ -23,10 +23,10 @@ class NubinBattery(Battery):
 
 class SpindlerBattery(Battery):
     def __init__(self, current_date, last_service_date):
-        self.current_date = datetime.strptime(current_date, '%Y-%m-%d').date()
-        self.last_service_date = datetime.strptime(last_service_date, '%Y-%m-%d').date()
+        self.current_date = current_date
+        self.last_service_date = last_service_date
 
     ## Should be serviced once every 2 years
     def needs_service(self) -> bool:
-        next_service_date = add_years_to_date(this.last_service_date, 2)
+        next_service_date = add_years_to_date(self.last_service_date, 2)
         return self.current_date >= next_service_date
