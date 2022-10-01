@@ -28,5 +28,5 @@ class SpindlerBattery(Battery):
 
     ## Should be serviced once every 2 years
     def needs_service(self) -> bool:
-        next_service_date = add_years_to_date(self.last_service_date, 2)
+        next_service_date = add_years_to_date(self.last_service_date, 3)
         return self.current_date >= next_service_date
