@@ -1,6 +1,9 @@
 import unittest
 from datetime import datetime
 
+import sys
+sys.path.append('/Volumes/sourcecode/forage-lyft-starter-repo')
+
 from battery import SpindlerBattery, NubinBattery
 
 
@@ -14,7 +17,7 @@ class TestSpindlerBattery(unittest.TestCase):
 
     def test_battery_should_not_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 1)
+        last_service_date = today.replace(year=today.year - 2)
         battery = SpindlerBattery(today, last_service_date)
 
         self.assertFalse(battery.needs_service())
