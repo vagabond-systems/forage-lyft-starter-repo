@@ -1,5 +1,5 @@
-from Engine import *
-from Battery import *
+from engines import *
+from batteries import *
 from datetime import datetime, date
 
 class Car:
@@ -10,9 +10,8 @@ class Car:
                 last_service_mileage: int,
                 engine: Engine,
                 battery: Battery):
-        self.engine = Engine(last_service_mileage: int, current_mileage: int)
-        self.battery = Battery(last_service_date: date, current_date:date)
-        # all the other attributes?
+        self.engine = engine(last_service_mileage, current_mileage)
+        self.battery = battery(last_service_date, current_date)
 
-    def needs_service() -> bool:
+    def needs_service(self) -> bool:
         return self.engine.needs_service() or self.battery.needs_service()
