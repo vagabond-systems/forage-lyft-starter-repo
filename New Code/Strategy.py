@@ -49,7 +49,7 @@ class Context():
         # ...
 
 
-class Strategy(ABC):
+class Serviceable(ABC): # Strategy
     """
     The Strategy interface declares operations common to all supported versions
     of some algorithm.
@@ -69,12 +69,12 @@ interface. The interface makes them interchangeable in the Context.
 """
 
 
-class ConcreteStrategyA(Strategy):
+class ConcreteStrategyA(Serviceable):
     def do_algorithm(self, data: List) -> List:
         return sorted(data)
 
 
-class ConcreteStrategyB(Strategy):
+class ConcreteStrategyB(Serviceable):
     def do_algorithm(self, data: List) -> List:
         return reversed(sorted(data))
 
