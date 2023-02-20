@@ -41,3 +41,11 @@ class CarFactory:
         battery = NubbinBattery(current_date, last_service_date)
         car = Car(engine, battery)
         return car
+    
+    @staticmethod
+    def create_carrigan():
+        pass
+
+    @staticmethod
+    def create_octoprime():
+        pass
