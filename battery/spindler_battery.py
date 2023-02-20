@@ -1,7 +1,7 @@
 from .battery import Battery
 from .utils import battery_service_year
 
-class Splinder(Battery):
+class Spindler(Battery):
 
     def __init__(self, current_date, last_service_date):
         self.current_date = current_date
