@@ -1,7 +1,7 @@
 import unittest
 
-from tire.CarriganTire import CarriganTire
-from tire.OctoprimeTire import OctoprimeTire
+from tire.CarriganTires import CarriganTire
+from tire.OctoprimeTires import OctoprimeTire
 
 class TestCarriganTire(unittest.TestCase):
     def test_carrigan_tire_should_be_serviced(self):
