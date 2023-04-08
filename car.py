@@ -6,4 +6,8 @@ class Car(Serviceable):
         self.battery = battery
 
     def needs_service(self):
+<<<<<<< HEAD
         return self.engine.needs_service() or self.battery.needs_service()
+=======
+        return self.engine.needs_service() or self.battery.needs_service()
+>>>>>>> b0e04759e21b1dd9fa81846dda078a2cfb447fb5
