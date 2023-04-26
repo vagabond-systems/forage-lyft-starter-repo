@@ -1,11 +1,6 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 
 
 class Engine(ABC):
-    def __init__(self, last_service_date):
-        super().__init__()
-        self.last_service_date = last_service_date
-    
-    @abstractmethod
     def needs_service(self):
         pass
