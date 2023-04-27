@@ -4,11 +4,14 @@ from engine.willoughby_engine import WilloughbyEngine
 from engine.sternman_engine import SternmanEngine
 from battery.spindler_battery import SpindlerBattery
 from battery.nubbin_battery import NubbinBattery
+from engine.engineStrategy import IEngineStrategy
+from battery.batteryStrategy import IBatteryStrategy
 
 
 class CarFactory():
     def __init__(self):
-        self.car = Car()
+        self.car = Car(engineStrategy=IEngineStrategy,
+                       batterySrategy=IBatteryStrategy)
 
     def create_calliope(self, current_date, last_service_date, current_mileage, last_service_mileage):
         self.car.engineStrategy = CapuletEngine(

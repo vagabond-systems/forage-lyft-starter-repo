@@ -1,4 +1,4 @@
-from engineStrategy import IEngineStrategy
+from engine.engineStrategy import IEngineStrategy
 
 
 class CapuletEngine(IEngineStrategy):

@@ -1,4 +1,4 @@
-from batteryStrategy import IBatteryStrategy
+from battery.batteryStrategy import IBatteryStrategy
 
 
 class SpindlerBattery(IBatteryStrategy):
