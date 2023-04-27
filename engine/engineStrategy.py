@@ -1,6 +1,7 @@
-from abc import ABC, abstractmethod
+from servicable import IServiceable
 
-class IEngineStrategy(ABC):
-    @abstractmethod
+
+class IEngineStrategy(IServiceable):
+
     def needs_service():
         pass
