@@ -11,7 +11,7 @@ class NubbinBattery(IBatteryStrategy):
             year=self.last_service_date.year + self.service_threshold_age)
 
     def needs_service(self):
-        if self.current_date > self.service_threshold_date:
+        if self.current_date >= self.service_threshold_date:
             return True
         else:
             return False
