@@ -21,6 +21,13 @@ class CarFactory():
             current_mileage=current_mileage, last_service_mileage=last_service_mileage)
         self.car.batteryStrategy = SpindlerBattery(
             current_date=current_date, last_service_date=last_service_date)
+        if tires == 'Carrigan':
+            self.car.tireStrategy = CarriganTire(tire_values)
+        elif tires == 'Octoprime':
+            self.car.tireStrategy = OctoprimeTire(tire_values)
+        else:
+            raise ValueError(
+                f"Expected Carrigan or Octoprime, recieved {tires} instead")
         return self.car
 
     def create_glissade(self, current_date, last_service_date, current_mileage, last_service_mileage, tires, tire_values):
@@ -28,6 +35,13 @@ class CarFactory():
             current_mileage=current_mileage, last_service_mileage=last_service_mileage)
         self.car.batteryStrategy = SpindlerBattery(
             last_service_date=last_service_date, current_date=current_date)
+        if tires == 'Carrigan':
+            self.car.tireStrategy = CarriganTire(tire_values)
+        elif tires == 'Octoprime':
+            self.car.tireStrategy = OctoprimeTire(tire_values)
+        else:
+            raise ValueError(
+                f"Expected Carrigan or Octoprime, recieved {tires} instead")
         return self.car
 
     def create_palindrome(self, current_date, last_service_date, warning_light_on, tires, tire_values):
@@ -35,6 +49,13 @@ class CarFactory():
             warning_light_is_on=warning_light_on)
         self.car.batteryStrategy = SpindlerBattery(
             last_service_date=last_service_date, current_date=current_date)
+        if tires == 'Carrigan':
+            self.car.tireStrategy = CarriganTire(tire_values)
+        elif tires == 'Octoprime':
+            self.car.tireStrategy = OctoprimeTire(tire_values)
+        else:
+            raise ValueError(
+                f"Expected Carrigan or Octoprime, recieved {tires} instead")
         return self.car
 
     def create_rorschach(self, current_date, last_service_date, current_mileage, last_service_mileage, tires, tire_values):
@@ -42,6 +63,13 @@ class CarFactory():
             current_mileage=current_mileage, last_service_mileage=last_service_mileage)
         self.car.batteryStrategy = NubbinBattery(
             last_service_date=last_service_date, current_date=current_date)
+        if tires == 'Carrigan':
+            self.car.tireStrategy = CarriganTire(tire_values)
+        elif tires == 'Octoprime':
+            self.car.tireStrategy = OctoprimeTire(tire_values)
+        else:
+            raise ValueError(
+                f"Expected Carrigan or Octoprime, recieved {tires} instead")
         return self.car
 
     def create_thovex(self, current_date, last_service_date, current_mileage, last_service_mileage, tires, tire_values):
@@ -49,4 +77,11 @@ class CarFactory():
             current_mileage=current_mileage, last_service_mileage=last_service_mileage)
         self.car.batteryStrategy = NubbinBattery(
             last_service_date=last_service_date, current_date=current_date)
+        if tires == 'Carrigan':
+            self.car.tireStrategy = CarriganTire(tire_values)
+        elif tires == 'Octoprime':
+            self.car.tireStrategy = OctoprimeTire(tire_values)
+        else:
+            raise ValueError(
+                f"Expected Carrigan or Octoprime, recieved {tires} instead")
         return self.car
