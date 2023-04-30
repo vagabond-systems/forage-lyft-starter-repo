@@ -4,8 +4,11 @@ from engine.willoughby_engine import WilloughbyEngine
 from engine.sternman_engine import SternmanEngine
 from battery.spindler_battery import SpindlerBattery
 from battery.nubbin_battery import NubbinBattery
+from tire.carrigan_tire import CarriganTire
+from tire.octoprime_tire import OctoprimeTire
 from engine.engineStrategy import IEngineStrategy
 from battery.batteryStrategy import IBatteryStrategy
+from tire.tireStrategy import ITireStrategy
 
 
 class CarFactory():

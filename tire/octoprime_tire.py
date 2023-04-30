@@ -1,7 +1,7 @@
-from tire.tireStrategy import TireStrategy
+from tire.tireStrategy import ITireStrategy
 
 
-class OctoprimeTire(TireStrategy):
+class OctoprimeTire(ITireStrategy):
     def __init__(self, tire_values: list) -> None:
         self.tire_values = tire_values
 

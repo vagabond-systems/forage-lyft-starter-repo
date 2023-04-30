@@ -1,7 +1,7 @@
 from servicable import IServiceable
 
 
-class TireStrategy(IServiceable):
+class ITireStrategy(IServiceable):
 
     def needs_service():
         pass
