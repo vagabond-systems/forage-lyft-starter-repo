@@ -2,5 +2,8 @@ from tire.tireStrategy import TireStrategy
 
 
 class CarriganTire(TireStrategy):
-    def needs_service():
+    def __init__(self, tire_values) -> None:
+        self.tire_values = tire_values
+
+    def needs_service(self):
         pass
