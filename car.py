@@ -1,4 +1,4 @@
-from serviceable import Serviceable
+from servicable import Serviceable
 
 
 class Car(Serviceable):

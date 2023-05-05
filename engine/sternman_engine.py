@@ -8,7 +8,7 @@ class SternmanEngine(Car, ABC):
         super().__init__(last_service_date)
         self.warning_light_is_on = bool(warning_light_is_on)
 
-    def engine_needs_to_be_serviced(self):
+    def needs_service(self):
         if self.warning_light_is_on:
             return True
         return False
