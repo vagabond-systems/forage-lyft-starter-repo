@@ -9,6 +9,6 @@ class SpindlerBattery(Car, ABC):
         self.current_date = current_date
         self.last_service_date = last_service_date
         
-    def battery_needs_to_be_serviced(self):
-        needs_service = bool(self.current_date - self.last_service_date > 365 * 2)
-        return needs_service
+    def needs_service(self):
+        needs_servicing = bool(self.current_date - self.last_service_date > 365 * 2)
+        return needs_servicing
