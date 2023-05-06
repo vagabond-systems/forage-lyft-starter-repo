@@ -1,5 +1,6 @@
-from battery.battery import Battery
 from utils import add_years_to_date
+from battery.battery import Battery
+
 
 
 class NubbinBattery(Battery):
