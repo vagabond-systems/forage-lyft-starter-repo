@@ -1,6 +1,6 @@
 import unittest
 
-from engine.sternman_engine import SternmanEngine
+from ...engine.sternman_engine import SternmanEngine
 
 
 class TestSternmanEngine(unittest.TestCase):

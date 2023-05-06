@@ -1,7 +1,7 @@
 import unittest
 from datetime import date
 
-from engine.willoughby_engine import WilloughbyEngine
+from ...engine.willoughby_engine import WilloughbyEngine
 
 
 class TestWilloughbyEngine(unittest.TestCase):
