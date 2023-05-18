@@ -14,7 +14,7 @@ class Test_Nubbin(unittest.TestCase):
 
 class Test_Spindler(unittest.TestCase):
     def test_needs_service(self):
-        battery = SpindlerBattery(datetime.today().date().replace(year=2020), datetime.today().date())
+        battery = SpindlerBattery(datetime.today().date().replace(year=2019), datetime.today().date())
         self.assertTrue(battery.needs_service())
 
     def test_does_not_need_service(self):
