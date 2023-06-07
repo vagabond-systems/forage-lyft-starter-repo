@@ -6,7 +6,7 @@ from engine.model.glissade import Glissade
 from engine.model.palindrome import Palindrome
 from engine.model.rorschach import Rorschach
 from engine.model.thovex import Thovex
-
+ 
 
 class TestCalliope(unittest.TestCase):
     def test_battery_should_be_serviced(self):
