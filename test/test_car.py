@@ -184,5 +184,5 @@ class TestThovex(unittest.TestCase):
         self.assertFalse(car.needs_service())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
