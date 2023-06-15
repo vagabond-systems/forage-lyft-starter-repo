@@ -9,3 +9,5 @@ class TestEngine(unittest.TestCase):
         engine = Engine("V8")
         self.assertFalse(engine.needsService(5000))
         self.assertTrue(engine.needsService(100000))
+if __name__ == '__main__':
+    unittest.main()
