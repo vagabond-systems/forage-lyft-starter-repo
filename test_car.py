@@ -16,9 +16,15 @@ class TestCar(unittest.TestCase):
         self.assertIsInstance(self.car.getEngine(), Engine)
         self.assertEqual(self.car.getEngine().getType(), "V8")
 
-    def test_getBattery(self):
-        self.assertIsInstance(self.car.getBattery(), Battery)
-        self.assertEqual(self.car.getBattery().getType(), "Lithium-ion")
+      def test_spindlerBatteryServiceAfterThreeYears(self):
+        engine = Engine("V8")
+        battery = Spindler("Lithium-ion")
+        car = Car("Model XYZ", engine, battery)
 
+        current_year = datetime.now().year
+        future_year = current_year + 3
+        car.advanceTime(future_year)  # Advances time by three years
+
+        self.assertTrue(car.getBattery().needsService())
 if __name__ == '__main__':
     unittest.main()
