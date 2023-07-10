@@ -9,35 +9,49 @@ from battery.spindler_battery import SpindlerBattery
 
 
 class CarFactory(Car):
-    def create_calliope(self, current_date, last_service_date, current_mileage, last_service_mileage):
+    """
+    A factory class for creating different types of cars.
+
+    This factory class provides static methods to create instances of various car models
+    with different engine and battery combinations. Each method takes specific parameters
+    to configure the car based on the desired model and its current status.
+
+    Note: The class assumes that the imported modules (car, engine, battery) exist in the project.
+    """
+    @staticmethod
+    def create_calliope(current_date, last_service_date, current_mileage, last_service_mileage):
         engine = CapuletEngine(last_service_mileage, current_mileage)
         battery = SpindlerBattery(last_service_date, current_date)
         calliope = Car(battery, engine)
         
         return calliope
     
-    def create_glissade(self, current_date, last_service_date, current_mileage, last_service_mileage):
+    @staticmethod
+    def create_glissade(current_date, last_service_date, current_mileage, last_service_mileage):
         engine = WilloughbyEngine(last_service_mileage, current_mileage)
         battery = SpindlerBattery(last_service_date, current_date)
         glissade = Car(battery, engine)
         
         return glissade
 
-    def create_palindrome(self, current_date, last_service_date, waning_light_on):
-        engine = SternmanEngine(last_service_date, waning_light_on)
+    @staticmethod
+    def create_palindrome(current_date, last_service_date, warning_light_is_on):
+        engine = SternmanEngine(last_service_date, warning_light_is_on)
         battery = SpindlerBattery(last_service_date, current_date)
         palindrome = Car(battery, engine)
         
         return palindrome
 
-    def create_rorschach(self, current_date, last_service_date, current_mileage, last_service_mileage):
+    @staticmethod
+    def create_rorschach(current_date, last_service_date, current_mileage, last_service_mileage):
         engine = WilloughbyEngine(last_service_mileage, current_mileage)
         battery = NubbinBattery(last_service_date, current_date)
         rorschach = Car(battery, engine)
         
         return rorschach
 
-    def create_thovex(self, current_date, last_service_date, current_mileage, last_service_mileage):
+    @staticmethod
+    def create_thovex(current_date, last_service_date, current_mileage, last_service_mileage):
         engine = CapuletEngine(last_service_mileage, current_mileage)
         battery = NubbinBattery(last_service_date, current_date)
         thovex = Car(battery, engine)
