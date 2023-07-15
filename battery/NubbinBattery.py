@@ -8,4 +8,7 @@ class NubbinBattery(IBattery):
 
     def needs_service(self):
         difference_in_years = self.get_current_date().year - self.get_last_service_date().year
-        return difference_in_years % 4 == 0
+        if difference_in_years > 0:
+            return difference_in_years % 4 == 0
+        else:
+            raise ValueError("Last service date cannot be greater than today's date")

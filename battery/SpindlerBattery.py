@@ -7,4 +7,8 @@ class SpindlerBattery(IBattery):
         super().__init__(last_service_date, current_date)
 
     def needs_service(self):
-        return (self.current_date.year - self.last_service_date.year) % 2 == 0
+        difference_in_years = self.get_current_date().year - self.get_last_service_date().year
+        if difference_in_years > 0:
+            return difference_in_years % 2 == 0
+        else:
+            raise ValueError("Last service date cannot be greater than today's date")
