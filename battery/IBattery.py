@@ -1,6 +1,6 @@
-from abc import ABC, abstractmethod
+from abc import ABCMeta, abstractmethod
 
-class IBattery(ABC):
+class IBattery(metaclass=ABCMeta):
     
     def __init__(self, last_service_date, current_date) -> None:
         self.last_service_date = last_service_date

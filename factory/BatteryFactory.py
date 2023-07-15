@@ -1,6 +1,6 @@
-from _attempt.battery.IBattery import IBattery
-from _attempt.battery.NubbinBattery import NubbinBattery
-from _attempt.battery.SpindlerBattery import SpindlerBattery
+from battery.IBattery import IBattery
+from battery.NubbinBattery import NubbinBattery
+from battery.SpindlerBattery import SpindlerBattery
 
 
 class BatteryFactory:
