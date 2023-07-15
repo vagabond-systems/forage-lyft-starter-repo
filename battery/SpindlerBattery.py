@@ -7,4 +7,4 @@ class SpindlerBattery(IBattery):
         super().__init__(last_service_date, current_date)
 
     def needs_service(self):
-        return (self.current_date - self.last_service_date) % 2 == 0
+        return (self.current_date.year - self.last_service_date.year) % 2 == 0
