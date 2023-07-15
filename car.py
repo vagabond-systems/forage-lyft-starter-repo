@@ -1,10 +1,17 @@
-from abc import ABC, abstractmethod
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
 
+    def get_make(self):
+        return self.make
 
-class Car(ABC):
-    def __init__(self, last_service_date):
-        self.last_service_date = last_service_date
+    def get_model(self):
+        return self.model
 
-    @abstractmethod
-    def needs_service(self):
-        pass
+    def get_year(self):
+        return self.year
+
+    def __str__(self):
+        return f"{self.make} {self.model} {self.year}"
