@@ -1,2 +1,3 @@
 # Starter Repo
-This repo has everything you need to get started on the program, good luck!
+I refactored the code in the original library using the 
+Abstract factory and Strategy design patterns and implemented sub classes.

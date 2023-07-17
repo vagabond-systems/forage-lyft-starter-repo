@@ -1,7 +1,8 @@
-from abc import ABC, abstractmethod
+from abc import ABCMeta, abstractmethod
 
 
-class Car(ABC):
+class IEngine(metaclass=ABCMeta):
+
     def __init__(self, last_service_date):
         self.last_service_date = last_service_date
 
