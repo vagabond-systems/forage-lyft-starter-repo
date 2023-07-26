@@ -8,4 +8,4 @@ class SplinderBattery(Battery):
         self.current_date = current_date
 
     def need_service(self) -> bool:
-        return self.current_date - self.last_service_date >= 730
+        return self.current_date - self.last_service_date >= 1095

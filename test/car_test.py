@@ -65,17 +65,16 @@ class test_nubbinbattery(unittest.TestCase):
 class test_splinderbattery(unittest.TestCase):
     def battery_should_be_replaced(self):
         current_date = datetime.today().date()
-        last_service_date = current_date.replace(year = current_date.year - 3)
+        last_service_date = current_date.replace(year = current_date.year - 4)
         
         self.assertTrue(SplinderBattery.need_service())
     
     def battery_should_not_be_replaced(self):
         current_date = datetime.today().date()
-        last_service_date = current_date.replace(year = current_date.year - 1)
+        last_service_date = current_date.replace(year = current_date.year - 2)
         
         self.assertFalse(SplinderBattery.need_service())
-        
-    
+           
 
 if __name__ == '__main__':
     unittest.main()
