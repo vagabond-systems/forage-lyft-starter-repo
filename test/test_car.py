@@ -6,6 +6,8 @@ from engine.model.glissade import Glissade
 from engine.model.palindrome import Palindrome
 from engine.model.rorschach import Rorschach
 from engine.model.thovex import Thovex
+from battery.nubbin_battery import NubbinBattery
+from battery.spindler_battery import SpindlerBattery
 
 
 class TestCalliope(unittest.TestCase):
@@ -182,6 +184,28 @@ class TestThovex(unittest.TestCase):
 
         car = Thovex(last_service_date, current_mileage, last_service_mileage)
         self.assertFalse(car.needs_service())
+
+class TestNubbinBattery(unittest.TestCase):
+    def test_battery_should_be_serviced(self):
+        last_service_date = datetime.today().date().replace(year=datetime.today().year - 6)
+        battery = NubbinBattery(last_service_date)
+        self.assertTrue(battery.needs_service())
+
+    def test_battery_should_not_be_serviced(self):
+        last_service_date = datetime.today().date().replace(year=datetime.today().year - 4)
+        battery = NubbinBattery(last_service_date)
+        self.assertFalse(battery.needs_service())
+
+class TestSpindlerBattery(unittest.TestCase):
+    def test_battery_should_be_serviced(self):
+        last_service_date = datetime.today().date().replace(year=datetime.today().year - 4)
+        battery = SpindlerBattery(last_service_date)
+        self.assertTrue(battery.needs_service())
+
+    def test_battery_should_not_be_serviced(self):
+        last_service_date = datetime.today().date().replace(year=datetime.today().year - 2)
+        battery = SpindlerBattery(last_service_date)
+        self.assertFalse(battery.needs_service())
 
 
 if __name__ == '__main__':
