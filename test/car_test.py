@@ -7,6 +7,8 @@ from battery.SplinderBattery import SplinderBattery
 from engine.CapuletEngine import CapuletEngine
 from engine.SternmanEngine import SternmanEngine
 from engine.WilloughbyEngine import WilloughbyEngine
+from tires.CarriganTires import CarriganTires
+from tires.OctoPrimeTires import OctoPrimeTires
 
 
 class test_capuletengine(unittest.TestCase):
@@ -74,6 +76,30 @@ class test_splinderbattery(unittest.TestCase):
         last_service_date = current_date.replace(year = current_date.year - 2)
         
         self.assertFalse(SplinderBattery.need_service())
+        
+class test_carrigantires(unittest.TestCase):
+    def tire_needs_service(self):
+        tire_wear = [0.9,0.1,0.8,0.2]
+        tires = CarriganTires(tire_wear)
+        self.assertTrue(tires.need_service())
+    
+    def tire_notneeds_service(self):
+        tire_wear = [0.2,0.1,0.3,0.4]
+        tires = CarriganTires(tire_wear)
+        self.assertFalse(tires.need_service())
+
+
+class test_octoprimetires(unittest.TestCase):
+    def tire_needs_service(self):
+        tire_wear = [0.9,0.9,0.9,0.4]
+        tires = OctoPrimeTires(tire_wear)
+        self.assertTrue(tires.need_service())
+    
+    def tire_notneeds_service(self):
+        tire_wear = [0.2,0.1,0.3,0.4]
+        tires = CarriganTires(tire_wear)
+        self.assertFalse(tires.need_service())
+    
            
 
 if __name__ == '__main__':
