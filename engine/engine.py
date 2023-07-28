@@ -1,6 +1,6 @@
-from serviceable import Serviceable
+from abc import ABC
 
-class Engine(Serviceable):
+class Engine(ABC):
     def __init__(self):
         pass
 

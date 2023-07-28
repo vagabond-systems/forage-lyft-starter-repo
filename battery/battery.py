@@ -1,6 +1,6 @@
-from serviceable import Serviceable
+from abc import ABC
 
-class Battery(Serviceable):
+class Battery(ABC):
     def __init__(self):
         pass
 
