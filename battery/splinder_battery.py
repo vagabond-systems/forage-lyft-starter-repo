@@ -1,8 +1,7 @@
-from battery import Battery
-from datetime import date
+from battery.battery import Battery
 
 class SplinderBattery(Battery):
-    def __init__(self, current_date: date, last_service_date: date):
+    def __init__(self, current_date, last_service_date):
         self.current_date = current_date
         self.last_service_date = last_service_date
         
