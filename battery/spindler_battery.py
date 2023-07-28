@@ -7,4 +7,4 @@ class SpindlerBattery(Battery):
 
     def needs_service(self) -> bool:
         current_date = datetime.today().date()
-        return (current_date - self.last_service_date).days >= 730  # 2 years in days
+        return (current_date - self.last_service_date).days >= 1095  # 2 years in days
