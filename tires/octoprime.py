@@ -6,7 +6,8 @@ class octoprimeTires(Tires):
 
 
     def needs_service(self):
-        if self.tires_wear_sensors >=3:
+        sum_tire = sum(self.tires_wear_sensors)
+        if sum_tire >=3:
             return True
         else:
             return False

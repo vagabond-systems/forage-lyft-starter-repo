@@ -6,7 +6,8 @@ class carriganTires(Tires):
 
 
     def needs_service(self):
-        if self.tires_wear_sensors >=0.9:
-            return True
-        else:
-            return False
+        for tire in self.tires_wear_sensors:
+            if tire >=0.9:
+                return True
+        
+        return False
