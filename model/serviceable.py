@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class Engine:
+class Serviceable():
     @abstractmethod
-    def needs_service() -> bool:
+    def needs_service()->bool:
         pass
