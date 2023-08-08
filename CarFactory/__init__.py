@@ -64,7 +64,7 @@ class CarFactory:
         )
 
 
-# example
+# example:
 current_date = datetime.today()
 last_service_date = datetime(2022, 7, 1)
 current_mileage = 50000
