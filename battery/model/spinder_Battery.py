@@ -8,4 +8,4 @@ class SpinderBattery(Car,ABC):
         self.current_date = current_date
         
      def battery_should_be_serviced(self):
-        return self.last_service_date - self.current_date > 2
+        return self.last_service_date - self.current_date > 3
