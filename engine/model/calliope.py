@@ -5,7 +5,8 @@ from engine.capulet_engine import CapuletEngine
 
 class Calliope(CapuletEngine):
     def needs_service(self):
-        service_threshold_date = self.last_service_date.replace(year=self.last_service_date.year + 2)
+         #service_threshold_date = self.last_service_date.replace(year=self.last_service_date.year + 2)
+        service_threshold_date = self.last_service_mileage.replace(miles=self.last_service_mileage > 30000) 
         if service_threshold_date < datetime.today().date() or self.engine_should_be_serviced():
             return True
         else:
