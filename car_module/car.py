@@ -1,6 +1,6 @@
 from .serviceable_interface import Serviceable
-from .car_components.battery.battery_interface import Battery
-from .car_components.engine.engine_interface import Engine
+from car_module.car_components.battery.battery_interface import Battery
+from car_module.car_components.engine.engine_interface import Engine
 
 
 class Car(Serviceable):

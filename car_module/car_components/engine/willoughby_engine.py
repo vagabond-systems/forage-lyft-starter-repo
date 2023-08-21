@@ -1,5 +1,4 @@
-from .engine_interface import Engine
-
+from car_module.car_components.engine.engine_interface import Engine
 
 class WilloughbyEngine(Engine):
     def __init__(self, current_mileage :int, last_service_mileage:int ):

@@ -1,5 +1,4 @@
-from .engine_interface import Engine
-
+from car_module.car_components.engine.engine_interface import Engine
 
 class SternmanEngine(Engine):
     def __init__(self, warning_light_is_on :bool):
