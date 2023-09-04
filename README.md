@@ -1,2 +1,2 @@
-# Starter Repo
-This repo has everything you need to get started on the program, good luck!
+# Jack Craig Repo
+This is completed up to Task 2, with the refactor based on the UML provided.
