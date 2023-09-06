@@ -1,7 +1,6 @@
 from abc import ABC
 
-from battery import Battery
-
+from battery.battery import Battery
 
 class SplinderBattery(Battery, ABC):
     def __init__(self, curr_date, last_serv_date):

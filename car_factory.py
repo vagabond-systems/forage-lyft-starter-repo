@@ -8,32 +8,51 @@ from engine.engine_type.willoughby_engine import WilloughbyEngine
 from car import Car
 
 class CarFactory():
+    # calliope
     @staticmethod
     def create_calliope(current_date, last_service_date, current_mileage, last_service_mileage):
         engine = CapuletEngine(current_mileage, last_service_mileage)
         battery = SplinderBattery(current_date, last_service_date)
         return Car(engine, battery)
+    
 
+
+
+    # glissade
     @staticmethod
     def create_glissade(current_date, last_service_date, current_mileage, last_service_mileage):
         engine = WilloughbyEngine(current_mileage, last_service_mileage)
         battery = SplinderBattery(current_date, last_service_date)
         return Car(engine, battery)
+
     
+
+    # palindrome
     @staticmethod
     def create_palindrome(current_date, last_service_date, warning_light_on):
         engine = SternmanEngine(warning_light_on)
         battery = SplinderBattery(current_date, last_service_date)
         return Car(engine, battery)
 
+
+
+
+
+    # rorschach
     @staticmethod
     def create_rorschach(current_date, last_service_date, current_mileage, last_service_mileage):
         engine = WilloughbyEngine(current_mileage, last_service_mileage)
         battery = NubbinBattery(current_date, last_service_date)
         return Car(engine, battery)
+    
 
+
+
+
+    # thovex - could use method overloading but its not working?
     @staticmethod
     def create_thovex(current_date, last_service_date, current_mileage, last_service_mileage):
         engine = CapuletEngine(current_mileage, last_service_mileage)
         battery = NubbinBattery(current_date, last_service_date)
         return Car(engine, battery)
+    

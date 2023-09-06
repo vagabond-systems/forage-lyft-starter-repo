@@ -1,6 +1,6 @@
 from abc import ABC
 
-from battery import Battery
+from battery.battery import Battery
 
 
 class NubbinBattery(Battery, ABC):
