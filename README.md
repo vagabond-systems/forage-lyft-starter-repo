@@ -28,8 +28,11 @@ To install and run Forage, you will need the following:
 
 1. Clone the repository:
 git clone https://github.com/Anmol-Choudhary-26/forage-lyft-Rental.git
+
 cd forage-lyft-Rental
+
 npm install
+
 npm start
 
 ### Contributing
