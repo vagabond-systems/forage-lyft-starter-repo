@@ -1,10 +1,15 @@
-from abc import ABC, abstractmethod
+from serviceable import Serviceable
 
+# access cars via the Serviceable interface
+class Car(Serviceable):
+    def __init__(self, parts):
+        # a car is a composition of different parts
+        self.parts = parts
 
-class Car(ABC):
-    def __init__(self, last_service_date):
-        self.last_service_date = last_service_date
-
-    @abstractmethod
     def needs_service(self):
-        pass
+        # check each part to see if any of them need service
+        for part in self.parts:
+            if part.needs_service():
+                return True
+
+        return False
