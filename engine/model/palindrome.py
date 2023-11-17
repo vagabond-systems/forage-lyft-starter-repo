@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from datetime import datetime
 
 from engine.sternman_engine import SternmanEngine
