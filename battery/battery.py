@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+"""defines battery module"""
 from abc import ABC
 
 

@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+""" Defines Spindler_Battery"""
 from battery.battery import Battery
 from utils import add_years_to_date
 
