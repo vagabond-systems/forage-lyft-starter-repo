@@ -6,4 +6,4 @@ from .battery import Battery
 
 class SpindlerBattery(Battery):
     def __init__(self):
-        super().__init__(service_criteria=2)
+        super().__init__(service_criteria=3)
