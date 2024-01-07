@@ -183,6 +183,5 @@ class TestThovex(unittest.TestCase):
         car = Thovex(last_service_date, current_mileage, last_service_mileage)
         self.assertFalse(car.needs_service())
 
-
 if __name__ == '__main__':
     unittest.main()
