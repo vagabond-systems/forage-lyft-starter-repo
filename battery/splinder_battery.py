@@ -8,7 +8,7 @@ class SplinderBattery(battery):
         self.last_service_date = last_service_date
 
     def needs_service(self):
-        serviceDate = add_yearTodate(self.last_service_date, 2)
+        serviceDate = add_yearTodate(self.last_service_date, 3)
         if serviceDate < self.current_date:
             return True
         else:
