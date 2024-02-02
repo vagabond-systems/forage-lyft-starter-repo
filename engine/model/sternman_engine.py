@@ -1,14 +1,10 @@
-from abc import ABC
-
-from engine import engine
-
+from engine.engine import Engine
 from datetime import datetime
 
 
 
-class SternmanEngine(engine, ABC):
+class SternmanEngine(Engine):
     def __init__(self, last_service_date, warning_light_is_on):
-        super().__init__(last_service_date)
         self.warning_light_is_on = warning_light_is_on
 
 
